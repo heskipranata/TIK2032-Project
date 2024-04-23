@@ -60,22 +60,22 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form>
+                <form id="contactForm">
                     <h2>Send message</h2>
                     <div class="inputBox">
-                        <input type="text" required="required">
+                        <input type="text" id="name" required>
                         <span>Your name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" required="required">
+                        <input type="email" id="email" required>
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea> 
+                        <textarea id="message" required></textarea> 
                         <span>Type your message ...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="send">
+                        <input type="submit" value="Send">
                     </div>
                 </form>
             </div>
@@ -84,5 +84,7 @@
             <p>&copy; 2024 Heski Pranata. Informatics Engineering.</p>
         </footer>
     </section>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>
