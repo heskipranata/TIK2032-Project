@@ -1,45 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
+const btn = document.querySelector('.read-more-btn')
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+const text = document.querySelector('.read-more')
 
-        // Ambil nilai input
-        const name = form.querySelector('input[name="name"]').value.trim();
-        const email = form.querySelector('input[name="email"]').value.trim();
-        const message = form.querySelector('textarea').value.trim();
+const cardHolder = document.querySelector('.article-container')
 
-        // Validasi input
-        if (name === '') {
-            alert('Please enter your name.');
-            return;
-        }
+cardHolder.addEventListener('click', e => {
+    const current = e.target;
+    const isReadMoreBtn = current.className.includes('read-more-btn')
 
-        if (email === '') {
-            alert('Please enter your email.');
-            return;
-        }
+    if(!isReadMoreBtn)
+        return;
 
-        if (!isValidEmail(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
+    const currentText = e.target.parentNode.querySelector('.read-more')
 
-        if (message === '') {
-            alert('Please enter your message.');
-            return;
-        }
-
-        alert('Form submitted successfully!');
-        form.reset(); 
-    });
-});
-
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+    currentText.classList.toggle('read-more--open')
+    current.textContent = current.textContent.includes('Read more...') ? 'Read less...' : 'Read more...';
+})
 
 
 
