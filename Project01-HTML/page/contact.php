@@ -1,3 +1,28 @@
+<?php
+
+// Membuat koneksi database
+$host = 'localhost';
+$user = 'root';
+$pass = 'root1';
+$dbname = 'personal_web';
+$port = 3307;
+
+$conn = mysqli_connect($host, $user, $pass, $dbname, $port);
+if(!$conn){
+    echo "Database tidak terhubung";
+}
+
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $query = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')";
+    mysqli_query($conn, $query);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heski Pranata - Contact</title>
     <link rel="stylesheet" href="../style/contact.css">
-    <link rel="stylesheet" href="../style/home.css"> 
+    <link rel="stylesheet" href="../style/home.css">
     <!-- Menggunakan style navbar home.css -->
 </head>
 <body>
@@ -60,30 +85,51 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" method="POST" action="">
                     <h2>Send message</h2>
                     <div class="inputBox">
-                        <input type="text" id="name" required>
+                        <input type="text" name="name" required>
                         <span>Your name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="email" id="email" required>
+                        <input type="email" name="email" required>
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea id="message" required></textarea> 
+                        <textarea name ="message" required></textarea> 
                         <span>Type your message ...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" value="Send">
+                        <input type="submit" name="submit" value="Send" id="myBtn" >
                     </div>
                 </form>
             </div>
         </div>
+
+        
         <footer class="footer">
             <p>&copy; 2024 Heski Pranata. Informatics Engineering.</p>
         </footer>
     </section>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+                </div>
+                <div class="modal-footer">
+                <h3>Modal Footer</h3>
+                </div>
+            </div>
+
+    </div>
 
     <script src="../js/script.js"></script>
 </body>
