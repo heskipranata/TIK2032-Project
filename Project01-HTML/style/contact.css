@@ -1,216 +1,264 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Montserrat", sans-serif;
-  box-sizing: border-box;
-  color: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
+/* Some basic CSS overrides */
 body {
-  transition: opacity 0.3s ease;
-  background-color: #000015;
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: "Outfit", sans-serif;
+    color: #2d232e;
+    background-color: #000015;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background-color: #ddd;
+    border: 4px solid transparent;
 }
 
 .contact {
-  position: relative;
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #000015;
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000015;
 }
 
 .contact .content-contact {
-  text-align: center;
-  color: #fff;
+    text-align: center;
+    color: #fff;
 }
 
 .content-contact h2 {
-  font-size: 30px;
-  color: #00ffee;
+    font-size: 30px;
+    color: #00ffee;
+    padding-top: 35px;
 }
 
 .content-contact p {
-  margin-top: 10px;
-  margin-left: 250px;
-  margin-right: 250px;
+    margin-top: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 .contact .container-contact {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .container-contact {
-  padding: 0 160px;
-  margin-bottom: 0;
+    padding: 0 160px;
+    margin-bottom: 0;
 }
 
 .container-contact .contact-info {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.container-contact .contact-info {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-contact .contact-info .box {
-  position: relative;
-  padding: 20px 0;
-  display: flex;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
 }
 
 .container-contact .contact-info .box .icon {
-  min-width: 50px;
-  height: 50px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 25px;
+    min-width: 50px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 25px;
 }
 
 .container-contact .contact-info .box .text {
-  display: flex;
-  margin-left: 20px;
-  font-size: 16px;
-  color: #fff;
-  flex-direction: column;
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
 }
 
 .text h2 {
-  color: #00ffee;
-  font-size: 20px;
+    color: #00ffee;
+    font-size: 20px;
 }
+
 .text a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .contact-form {
-  background-color: #fff;
-  width: 35%;
-  padding: 10px 20px;
+    background-color: #fff;
+    width: 35%;
+    padding: 10px 20px;
 }
 
 .contact-form h2 {
-  color: #ff004f;
-  font-size: 20px;
-  padding-bottom: 8px;
+    color: #ff004f;
+    font-size: 20px;
+    padding-bottom: 8px;
 }
 
 .contact-form .inputBox {
-  position: relative;
+    position: relative;
 }
 
 .contact-form .inputBox textarea,
 .contact-form .inputBox input {
-  border: none;
-  color: #000015;
-  width: 100%;
-  padding: 5px 0;
-  font-size: 14px;
-  margin: 14px 0;
-  border-bottom: 1px solid #333;
-  outline: none;
-  resize: none;
+    border: none;
+    color: #000015;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: 14px 0;
+    border-bottom: 1px solid #333;
+    outline: none;
+    resize: none;
 }
 
 .contact-form .inputBox span {
-  position: absolute;
-  left: 0;
-  color: #000015;
-  padding: 1px 0;
-  font-size: 10px;
-  margin: 0;
-  pointer-events: none;
-  transition: 0.5s;
+    position: absolute;
+    left: 0;
+    color: #000015;
+    padding: 1px 0;
+    font-size: 10px;
+    margin: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
 .contact-form .inputBox input[type="submit"] {
-  border: none;
-  width: 100px;
-  padding: 10px;
-  background-color: #ff004f;
-  border-radius: 5%;
+    border: none;
+    width: 100px;
+    padding: 10px;
+    background-color: #ff004f;
+    border-radius: 5%;
 }
 
-/* CSS for modal */
+/* Modal Styles */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 50%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content */
 .modal-content {
-  position: relative;
-  margin: auto; /* Center the modal */
-  padding: 0;
-  border: 1px solid #888;
-  width: 30%; /* Adjust width as needed */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+  max-height: 90vh;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
 }
 
-/* Add Animation */
 @-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0;} 
-  to {top:0; opacity:1;}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 @keyframes animatetop {
-  from {top:-300px; opacity:0;}
-  to {top:0; opacity:1;}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+@media (max-width: 600px) {
+  .modal-content {
+      width: 90%;
+  }
 }
 
 .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: #000015;
+  padding: 5px 32px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.modal-body {
-  padding: 20px 16px;
-  color: #000;
-  background-color: #5cb85c;
+.modal-container-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+  font-weight: 700;
+  font-size: 1.125rem;
 }
 
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: #000015;
+.icon-button {
+  padding: 2px 5px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 0;
+  font-size: 38px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
 }
+
+.icon-button:hover,
+.icon-button:focus {
+  color: rgb(67, 228, 13);
+}
+
+
